@@ -1,0 +1,272 @@
+body {
+    box-sizing: border-box;
+    background-color:		#4bb0d8e0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    height: 250px;
+    grid-template-areas:
+        "header header header"
+        "main main  aside"
+        "footer footer footer";
+}
+
+header {
+    height: 100px;
+    grid-area: header;
+    text-align: center;
+    padding: 30px;
+    background-color:	#ADD8E6;
+
+}
+
+header h1 {
+    padding: 10px;
+}
+
+aside {
+    grid-area: aside;
+    padding: 10px 40px;
+    background-color: #f1c087;
+}
+
+main {
+    grid-area: main;
+}
+
+main p {
+    margin: 0;
+}
+
+
+footer {
+    width: 90vw;
+    margin: 8px auto;
+    grid-area: footer;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 1183px;
+
+}
+
+.slider p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.item {
+    display: grid;
+    width: 310px;
+    height: 210px;
+    margin: 40px;
+    background-color:#f1c087;
+    border: 2px solid #ddbbbb;
+    transition: all .2s ease-out;
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: translate(2px);
+    box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.2);
+}
+
+.item img {
+    width: 180px;
+    height: 110px;
+    float: left;
+    margin: 10px;
+}
+
+.name {
+    margin: 10px;
+}
+
+.calories {
+    margin: 10px;
+    padding: 10px;
+    border-top: 2px solid #d89e69;
+}
+
+.range {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+input[type='range'] {
+    width: 200px;
+}
+
+
+.filters {
+    margin-top: 50px;
+}
+
+.filters label {
+    padding: 15px 0;
+    width: 200px;
+    background-color: #ecdb90;
+    display: flex;
+    font-weight: bold;
+    margin: 20px;
+    justify-content: center;
+    border: 1px solid #afafaf;
+    cursor: pointer;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+#rb1:checked~#roll,
+#rb1:checked~#Cheesecakes,
+#rb1:checked~#cake {
+    display: none !important;
+}
+
+#rb2:checked~#pie,
+#rb2:checked~#Cheesecakes,
+#rb2:checked~#cake {
+    display: none !important;
+}
+
+#rb3:checked~#pie,
+#rb3:checked~#roll,
+#rb3:checked~#cake {
+    display: none !important;
+}
+
+#rb4:checked~#pie,
+#rb4:checked~#roll,
+#rb4:checked~#Cheesecakes {
+    display: none !important;
+}
+
+.far {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .container {
+        display: grid;
+        width: 100%;
+        height: 250px;
+        grid-template-areas:
+            "header"
+            "aside"
+            "main"
+            "footer";
+    }
+
+
+    .slider {
+        display: none
+    }
+
+    .filters {
+        margin-top: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .filters label {
+        width: 500px;
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .calories {
+        display: none
+    }
+
+    .item img {
+        width: 95%;
+        height: 82%;
+    }
+
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item {
+        width: 350px;
+        height: auto;
+        margin: 20px;
+        background-color: #fff9c8;
+        border: 1px solid #afafaf;
+        transition: all .2s ease-out;
+        cursor: pointer;
+        height: auto;
+    }
+
+    .cont {
+        width: 130px;
+    }
+
+}
+    @media screen and (max-width: 730px) {
+        header{
+            height: 200px;
+        }
+        h1 {
+            font-size: 80px;
+        }
+
+        .item {
+            width: 100%;
+        }
+
+        .name {
+            display: none
+        }
+        .main p{
+                font-size: 60px;
+        } 
+
+        .item img {
+            margin: 20px;
+        }
+
+        .filters label {
+            width: 500px;
+            font-size: 50px;
+            border-radius: 20px;
+            margin: 10px
+        }
+
+        footer {
+            width: 150vw;
+            display: block;
+            font-size: 40px;
+
+        }
+    }
